@@ -4,6 +4,8 @@
 <main>
     <div class="container mt-5">
         <h1 class="mb-4 text-center">Projects List</h1>
+        <a href="{{route('projects.create')}}" class="btn btn-primary m-2">Aggiungi un nuovo progetto</a>
+
         <table class="table">
             <thead>
                 <tr>
@@ -17,7 +19,7 @@
             <tbody>
                 @foreach ($projects as $project)
                 <tr>
-                    <td>{{ $project->title }}</td>
+                    <td><a href="{{route('projects.show', $project)}}">{{ $project->title }}</a></td>
                     <td>{{ $project->description }}</td>
                     <td>{{ $project->date_of_creation }}</td>
                     <td><a href="{{ $project->link }}">{{ $project->link }}</a></td>
