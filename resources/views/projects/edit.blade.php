@@ -4,17 +4,17 @@
 <main>
 <div class="container mt-5">
     <div>
-        <h1><strong>Modifica i dati del progetto: {{$project->title}}</strong></h1>
+        <h1><strong>Edit the project: {{$project->title}}</strong></h1>
     </div>
     <form action="{{route('projects.update', $project)}}" method="POST">
     @csrf
     @method('PUT')
         <div class="mb-3">
-            <label for="title" class="form-label">Titolo</label>
+            <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" name="title" id="title" value="{{old('title', $project->title)}}">
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label">Descrizione</label>
+            <label for="description" class="form-label">Description</label>
             <input type="text" class="form-control" name="description" id="description" value="{{old('description', $project->description)}}">
         </div>
         <div class="mb-3">

@@ -4,16 +4,16 @@
 <main>
 <div class="container mt-5">
     <div>
-        <h1><strong>Inserisci i dati del nuovo progetto</strong></h1>
+        <h1><strong>Enter the new project details</strong></h1>
     </div>
     <form action="{{route('projects.store')}}" method="POST">
     @csrf
         <div class="mb-3">
-            <label for="title" class="form-label">Titolo</label>
+            <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" name="title" id="title" placeholder="Insert the title of the project">
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label">Descrizione</label>
+            <label for="description" class="form-label">Description</label>
             <input type="text" class="form-control" name="description" id="description" placeholder="Insert the description of the project">
         </div>
         <div class="mb-3">
@@ -29,7 +29,7 @@
             <input type="text" class="form-control" name="created_by" id="created_by" placeholder="Insert the name of the creator">
         </div>
 
-        <button type="submit" class="btn btn-primary">Crea</button>
+        <button type="submit" class="btn btn-primary">Add</button>
     </form>
     <div class="mt-3 col-4">
         @if($errors->any())
