@@ -11,27 +11,38 @@
     @method('PUT')
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
-            <input type="text" class="form-control" name="title" id="title" value="{{$project->title}}">
+            <input type="text" class="form-control" name="title" id="title" value="{{old('title', $project->title)}}">
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <input type="text" class="form-control" name="description" id="description" value="{{$project->description}}">
+            <input type="text" class="form-control" name="description" id="description" value="{{old('description', $project->description)}}">
         </div>
         <div class="mb-3">
             <label for="date_of_creation" class="form-label">Date of creation</label>
-            <input type="date" class="form-control" name="date_of_creation" id="date_of_creation" value="{{$project->date_of_creation}}">
+            <input type="date" class="form-control" name="date_of_creation" id="date_of_creation" value="{{old('date_of_creation', $project->date_of_creation)}}">
         </div>
         <div class="mb-3">
             <label for="link" class="form-label">Link</label>
-            <input type="text" class="form-control" name="link" id="link" value="{{$project->link}}">
+            <input type="text" class="form-control" name="link" id="link" value="{{old('link', $project->link)}}">
         </div>
         <div class="mb-3">
             <label for="created_by" class="form-label">Created by</label>
-            <input type="text" class="form-control" name="created_by" id="created_by" value="{{$project->created_by}}">
+            <input type="text" class="form-control" name="created_by" id="created_by" value="{{old('created_by', $project->created_by)}}">
         </div>
 
         <button type="submit" class="btn btn-primary">Salva</button>
     </form>
+    <div class="mt-3 col-4">
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+    </div>
 </div>
 </main>
 @endsection
