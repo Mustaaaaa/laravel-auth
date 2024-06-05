@@ -29,7 +29,7 @@
                         @csrf
                         <button class="btn btn-danger m-2">Elimina</button>
                     </form>
-                    <a href="{{ url()->previous() }}" class="btn btn-primary m-2 col-1">Indietro</a>
+                    <a href="{{ route('projects.index')}}" class="btn btn-primary m-2 col-1">Indietro</a>
                 </div>
             </div>
         </div>
