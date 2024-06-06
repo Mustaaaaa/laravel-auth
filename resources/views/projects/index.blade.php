@@ -4,8 +4,9 @@
 <main>
     <div class="container mt-5">
         <h1 class="mb-4 text-center">Projects List</h1>
+        @auth
         <a href="{{route('projects.create')}}" class="btn btn-primary m-2">Add a new project</a>
-
+        @endauth
         <table class="table">
             <thead>
                 <tr>

@@ -23,12 +23,14 @@
                 <h5 class="card-title">Created by:</h5>
                 <p class="card-text">{{ $project->created_by }}</p>
                 <div class="row justify-content-center">
+                    @auth
                     <a href="{{ route('projects.edit',$project) }}" class="btn btn-success m-2 col-1">Edit</a>
                     <form action="{{route('projects.destroy', $project)}}" method="POST" class="col-1">
                         @method('DELETE')
                         @csrf
                         <button class="btn btn-danger m-2">Delete</button>
                     </form>
+                    @endauth
                     <a href="{{ route('projects.index')}}" class="btn btn-primary m-2 col-1"><---</a>
                 </div>
             </div>
